@@ -187,7 +187,7 @@ class Obstacle {
 
     checkForEnd() {
         if (this.y > 900) {
-            console.log('outside');
+            // console.log('outside');
             this.resetRandomY();
         }
     }
@@ -379,7 +379,7 @@ function eventListener() {
             setTimeout(()=>{
                 bug.position(bug.x-80,600);
                 spaceflag = 0;
-            },600);
+            },750);
             // console.log('space');
         }
         // else if (event.key === 'Shift'){
