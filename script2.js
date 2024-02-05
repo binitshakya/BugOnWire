@@ -379,7 +379,7 @@ function eventListener() {
             setTimeout(()=>{
                 bug.position(bug.x-80,600);
                 spaceflag = 0;
-            },750);
+            },1050);
             // console.log('space');
         }
         // else if (event.key === 'Shift'){
