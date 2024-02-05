@@ -1,11 +1,8 @@
-@font-face {
-    font-family: 'KulminoituvaRegular';
-    src: url('http://www.miketaylr.com/f/kulminoituva.ttf');
-}
-
 body{
     background-image: url('./images/Background3.png');
     background-size: cover;
+    width : 100 vw;
+    height : 100 vh;
 }
 
 #canvas{
