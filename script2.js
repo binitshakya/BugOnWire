@@ -13,7 +13,7 @@ let myFont = new FontFace("myFont","url(./assets/Honk-Regular.ttf)");
 myFont.load().then(function(font){
     // with canvas, if this is ommited won't work
     document.fonts.add(font);
-    console.log('Font loaded');
+    //console.log('Font loaded');
   });
 // ctx.font = "20px myFont";
 
@@ -45,7 +45,7 @@ class Coins {
         if (this.x === 200) this.wirepos = -1;
         else if (this.x === 400) this.wirepos = 0;
         else (this.wirepos = 1);
-        console.log(`${this.wirepos} coin`);
+        // console.log(`${this.wirepos} coin`);
         this.size = size;
     }
 
@@ -92,7 +92,7 @@ class Coins {
 
     checkForEnd() {
         if (this.y > 900) {
-            console.log('outside coin ');
+            // console.log('outside coin ');
             this.resetRandomY();
             this.iscounted= false;
         }
@@ -137,7 +137,7 @@ class Obstacle {
         if (this.x === 200) this.wirepos = -1;
         else if (this.x === 400) this.wirepos = 0;
         else (this.wirepos = 1);
-        console.log(`${this.wirepos} obstacle`);
+        // console.log(`${this.wirepos} obstacle`);
         this.size = size;
         this.iscounted= false;
     }
@@ -217,7 +217,7 @@ class Obstacle {
             over_id = setInterval(() => {
                 ctx.clearRect(0,0,1000,1000);
             }, 100);
-            console.log('clear the rect');
+            // console.log('clear the rect');
             eatsound();
             gameover();
         };
@@ -366,12 +366,12 @@ function eventListener() {
         if(event.key === "ArrowRight" && wirepos != 1 && spaceflag === 0) {
             bug.position(bug.x+200, 600);
             wirepos ++;
-            console.log(`${wirepos} bug position`)
+            // console.log(`${wirepos} bug position`)
         }
         else if(event.key === "ArrowLeft" && wirepos != -1 && spaceflag === 0) {
             bug.position(bug.x-200, 600);
             wirepos --; 
-            console.log(`${wirepos} bug position`);
+            // console.log(`${wirepos} bug position`);
         }
         else if (event.key === ' ' && spaceflag === 0){
             spaceflag = 1;
@@ -380,7 +380,7 @@ function eventListener() {
                 bug.position(bug.x-80,600);
                 spaceflag = 0;
             },600);
-            console.log('space');
+            // console.log('space');
         }
         // else if (event.key === 'Shift'){
         //     clearInterval(tid);
@@ -479,7 +479,7 @@ function gameover(){
         if(event.key === 'M' || event.key === 'm'){
             // clearInterval(over_id2);
             ctx.clearRect(0, 0, 1000, 1000);
-            console.log('called start screen ');
+            // console.log('called start screen ');
             document.removeEventListener('keydown',handleKeyDown);
             location.reload();
             // ismpressed = true;
@@ -496,7 +496,7 @@ scoretitle.src = "./images/bugslife.jpg";
 
 function startscreen(){
     let newfont = new FontFace("newfont","url(assets/LondrinaSolid-Regular.ttf)");
-    newfont.load().then(console.log('loaded font new'));
+    newfont.load()
     t = 0;
     coinCount = 0;
     // if (gid){
@@ -518,12 +518,12 @@ function startscreen(){
     // });
     ctx.fillText('PRESS ENTER TO BEGIN',200,450);
     ctx.fillText('PRESS H FOR INSTRUCTIONS',200,550);
-    console.log('at the start screen');
+    // console.log('at the start screen');
     // let startid = setInterval(startscreen, 1000);
     document.addEventListener('keydown', (event) => {
         if(event.key === "Enter" && !isGameRunning) {
             // clearInterval(startid);
-            console.log("Enter pressed ");
+            // console.log("Enter pressed ");
             isGameRunning = true;
             animate();
             tid = setInterval(() => {
