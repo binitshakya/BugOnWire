@@ -449,7 +449,7 @@ function animate2(){
 //         val += 1;
 //     },1000)
 // }
-let t = 16; // initial speed
+let t = 0; // initial speed
 
 // Randomize the starting positions of the obstacles
 
@@ -497,7 +497,7 @@ scoretitle.src = "./images/bugslife.jpg";
 function startscreen(){
     let newfont = new FontFace("newfont","url(assets/LondrinaSolid-Regular.ttf)");
     newfont.load().then(console.log('loaded font new'));
-    t = 8;
+    t = 0;
     coinCount = 0;
     // if (gid){
     //     clearInterval(gid);
