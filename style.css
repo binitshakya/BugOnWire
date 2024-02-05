@@ -2,7 +2,10 @@ body{
     background-image: url('./images/Background3.png');
     background-size: cover;
 }
-
+#gamescreen{
+    width : 100vw;
+    height: 100vh;
+}
 #canvas{
     margin : 20px 10px 0px 20px
     border: 10px solid black;
