@@ -82,7 +82,7 @@ class Coins {
     }
 
     update() {
-        this.y += t/8; // Adjust the speed of the obstacles t/8
+        this.y += s/8; // Adjust the speed of the obstacles t/8
         if (this.x === 200) this.wirepos = -1;
         else if (this.x === 400) this.wirepos = 0;
         else (this.wirepos = 1);
@@ -177,7 +177,7 @@ class Obstacle {
     }
 
     update() {
-        this.y += t/8; // Adjust the speed of the obstacles
+        this.y += s/8; // Adjust the speed of the obstacles
         if (this.x === 200) this.wirepos = -1;
         else if (this.x === 400) this.wirepos = 0;
         else (this.wirepos = 1);
@@ -379,7 +379,7 @@ function eventListener() {
             setTimeout(()=>{
                 bug.position(bug.x-80,600);
                 spaceflag = 0;
-            },1050);
+            },750);
             // console.log('space');
         }
         // else if (event.key === 'Shift'){
@@ -450,6 +450,7 @@ function animate2(){
 //     },1000)
 // }
 let t = 0; // initial speed
+let s = 0;
 
 // Randomize the starting positions of the obstacles
 
@@ -528,6 +529,7 @@ function startscreen(){
             animate();
             tid = setInterval(() => {
                 t++;
+                s++;
             }, 1000);
             animate2();
         }
